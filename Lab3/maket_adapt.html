@@ -10,7 +10,7 @@
             flex-direction: column;
             margin: 0;
         }
-        h1, footer {
+        h1{
             width:100%;
             height:5vh;
             font-size:5vh;
@@ -19,9 +19,17 @@
             background: #ff3030;
             margin:0;
         }
-        footer {
-            height: 2vh;
-            font-size: 2vh;
+        img {
+            height:30%;
+            margin:3%;
+            float: left;
+        }
+        .footer {
+            height: 3vh;
+            font-size: 3vh;
+            padding: 1vh;
+            text-align: center;
+            background: #ff3030;
         }
         .container {
             display:flex;
@@ -46,17 +54,31 @@
         .aside > p:hover {
             background-color: #1d1d1d;
         }
+        .text {
+            margin:3%;
+            text-align: justify;
+            font-size: larger;
+        }
         @media (max-width:700px) {
             .aside {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 height: 25vh;
                 order: 2;
                 margin:0;
             }
             .main {
-                height:100vh;
+                display: flex;
+                flex-direction: column;
+                height:fit-content;
             }
             .container {
-                height: 120vh;
+                height: fit-content;
+            }
+            img {
+                float: none;
+                align-self: center;
             }
         }
         @media (min-width: 700px) {
@@ -95,9 +117,27 @@
             <p class="contacts" class="nav">Contacts</p>
         </div>
         <div class="main">
-            <img src="cafe.jpg">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <img src="img.jpeg">
+            <p class="text">Nestled on a quaint corner of the bustling city streets, Cafe de la Brise exudes an inviting charm that draws patrons in from the brisk morning air. The aroma of freshly ground coffee beans mingles with the scent of baked goods, promising a delightful culinary journey.
+
+                Stepping inside, one is greeted by the warm ambiance, where sunlight streams through large windows adorned with potted plants, casting a gentle glow on wooden tables and plush seating. The soft hum of conversation creates a soothing backdrop, inviting guests to linger over their drinks and conversations.
+                
+                At the heart of the cafe stands a sleek espresso machine, its polished surfaces reflecting the skillful hands of baristas crafting intricate latte art. From rich, velvety cappuccinos to robust Americanos, each cup is a testament to the dedication to the craft of coffee-making.
+                
+                The menu boasts a tantalizing array of offerings, from flaky pastries and buttery croissants to hearty sandwiches and vibrant salads, all prepared with locally sourced ingredients and a passion for flavor. Patrons savor each bite, their taste buds dancing with delight.
+                
+                As the day transitions into afternoon, the pace slows, and the cafe transforms into a haven for remote workers and students seeking respite from the demands of the outside world. Laptops open, pens scribble notes, and the gentle clink of cutlery accompanies the soft strains of background music.
+                
+                Evenings bring a different ambiance, as soft lighting and flickering candles cast a romantic glow over intimate tables. Couples share quiet moments over glasses of wine, while friends gather to toast to the joys of friendship.
+                
+                Through it all, Cafe de la Brise remains a beloved fixture in the community, a place where strangers become friends, and every cup tells a story. Whether seeking a moment of solitude or a lively gathering with loved ones, this charming cafe offers a sanctuary for all who enter its doors.</p>
+>>>>>>> cafb9e17f7ce55b8be415f6581246d813121940f
         </div>
     </div>
+    <div class="footer">Created by @yuliaraitsyna</div>
 </body>
 <footer class="footer">Created by @yuliaraitsyna</footer>
 </html>
