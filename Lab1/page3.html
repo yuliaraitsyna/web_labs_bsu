@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramka</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;1,900&display=swap');
+    </style>
+    <style>
+        body {
+            width: 100%;
+            height:auto;
+            display: flex;
+            justify-content: center;
+        }
+        div {
+            font-family: 'Libre Franklin', sans-serif;
+        }
+        .container{
+            width: 90%;
+            height: fit-content;
+            display: grid;
+            grid-template-columns: 107px 1fr 107px;
+            grid-template-rows: 107px 1fr 107px;
+        }
+        .grid-corner1 {
+            background-image: url("./img/corner_1.png");
+            background-repeat: no-repeat;
+        }
+        .grid-corner2 {
+            background-image: url("./img/corner_2.png");
+            background-repeat: no-repeat;
+        }
+        .grid-corner3 {
+            background-image: url("./img/corner_3.png");
+            background-repeat: no-repeat;
+        }
+        .grid-corner4 {
+            background-image: url("./img/corner_4.png");
+            background-repeat: no-repeat;
+        }
+        .grid-border1 {
+            background-image: url("./img/up.png");
+            background-repeat: repeat-x;
+        }
+        .grid-border2 {
+            background-image: url("./img/left.png");
+            background-repeat: repeat-y;
+        }
+        .grid-border3 {
+            background-image: url("./img/right.png");
+            background-repeat: repeat-y;
+        }
+        .grid-border4 {
+            background-image: url("./img/bottom.png");
+            background-repeat: repeat-x;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-corner1"></div>
+        <div class="grid-border1"></div>
+        <div class="grid-corner2"></div>
+        <div class="grid-border2"></div>
+        <div class="grid-text">Welcome to the cozy and atmospheric café "Lavender Mood"! We take pride in creating the perfect place for gatherings with friends, romantic dates, and pleasant conversations.
+
+            Our café features a cozy interior inspired by nature and the comfort of home. Every element of our décor is carefully thought out to create an atmosphere of warmth and tranquility.
+            
+            We prepare our dishes with love and care, using only the freshest and highest quality ingredients. Our menu is diverse and caters to every taste, from classic dishes to unique culinary creations. Additionally, we offer a wide selection of beverages, ranging from aromatic coffee to exquisite cocktails.
+            
+            We strive to make your visit to "Lavender Mood" café unforgettable. Our friendly staff is always ready to provide you with attentive service and assist you in choosing dishes and drinks.
+            
+            Come and enjoy the warmth and comfort of "Lavender Mood" café! We look forward to welcoming you
+        </div>
+        <div class="grid-border3"></div>
+        <div class="grid-corner3"></div>
+        <div class="grid-border4"></div>
+        <div class="grid-corner4"></div>
+    </div>
+</body>
+</html>
