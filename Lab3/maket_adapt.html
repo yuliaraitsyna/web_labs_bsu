@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKET_ADAPT</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        h1 {
+            width:100%;
+            height:5vh;
+            font-size:5vh;
+            padding:1vh;
+            text-align: center;
+            background: #ff3030;
+            margin:0;
+        }
+        .container {
+            display:flex;
+            flex-wrap: wrap;
+            height:100vh;
+        }
+        .aside, .main {
+            width: 100%;
+        }
+        .aside {
+            background: #000;
+        }
+        .aside > p {
+            color:white;
+            text-align: center;
+            border:solid red;
+        }
+        @media (max-width:700px) {
+            .aside {
+                height:fit-content;
+                order:2;
+            }
+            .main {
+                height: 100%;
+            }
+        }
+        @media (min-width: 700px) {
+            .aside {
+                flex: 0 0 25%;
+                max-width: 25%;
+                order: 1;
+            }
+            .main {
+                flex:0 0 75%;
+                max-width: 75%;
+                order: 2;
+            }
+        }
+        @media (min-width:1400px) {
+            .aside {
+                flex: 0 0 25%;
+                max-width: 25%;
+                order: 1;
+            }
+            .main {
+                flex: 0 0 75%;
+                max-width: 75%;
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cafe</h1>
+    <div class="container">
+        <div class="aside">
+            <p class="about" class="nav">About</p>
+            <p class="menu" class="nav">Menu</p>
+            <p class="services" class="nav">Services</p>
+            <p class="contacts" class="nav">Contacts</p>
+        </div>
+        <div class="main">
+
+        </div>
+    </div>
+</body>
+</html>
