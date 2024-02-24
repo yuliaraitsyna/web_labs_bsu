@@ -6,9 +6,11 @@
     <title>MAKET_ADAPT</title>
     <style>
         body {
+            display:flex;
+            flex-direction: column;
             margin: 0;
         }
-        h1 {
+        h1, footer {
             width:100%;
             height:5vh;
             font-size:5vh;
@@ -16,6 +18,10 @@
             text-align: center;
             background: #ff3030;
             margin:0;
+        }
+        footer {
+            height: 2vh;
+            font-size: 2vh;
         }
         .container {
             display:flex;
@@ -31,15 +37,26 @@
         .aside > p {
             color:white;
             text-align: center;
-            border:solid red;
+            margin:0;
+            height: 3vh;
+            font-size: 3vh;
+            padding: 1vh;
+            align-items: center;
+        }
+        .aside > p:hover {
+            background-color: #1d1d1d;
         }
         @media (max-width:700px) {
             .aside {
-                height:fit-content;
-                order:2;
+                height: 25vh;
+                order: 2;
+                margin:0;
             }
             .main {
-                height: 100%;
+                height:100vh;
+            }
+            .container {
+                height: 120vh;
             }
         }
         @media (min-width: 700px) {
@@ -81,5 +98,6 @@
 
         </div>
     </div>
+    <footer class="footer">Created by @yuliaraitsyna</footer>
 </body>
 </html>
