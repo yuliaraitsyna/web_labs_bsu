@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <style>
+        .container {
+            display:flex;
+            flex-direction: column;
+            height: fit-content;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <input id="input" onclick="Add()" type="button" value="Add menu position">
+        <input id="delete" onclick="Delete()" type="button" value="Delete menu position">
+        <input id="info" onclick="Info()" type="button" value="Get info about menu position">
+        <input id="all-menu" onclick="Menu()" type="button" value="Get all menu">
+    </div>
+</body>
+</html>
