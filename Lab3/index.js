@@ -32,22 +32,20 @@ function GetValueInfo(key) {
 }
 
 function ListValues() {
-    let string = '';
+    let string = ''
     for (let key in menu) {
-        string += key + ': ' + menu[key] + '\n';
+        string += key + ': ' + menu[key] + '\n'
     }
-    return string;
+    return string
 }
 
 function Add() {
-    let input = window.prompt("Enter name of the menu position and price");
-    if (input !== null) {
-        let values = input.split(' ');
-        let key = values[0];
-        let value = values[1];
-        AddValue(key, value);
+    let nameInput = window.prompt("Enter name of the menu position")
+    let priceInput = window.prompt("Enter price")
+    if (nameInput !== null || priceInput !== null) {
+        AddValue(nameInput, priceInput)
     } else {
-        console.error("Input is empty");
+        console.error("Input is empty")
     }
 }
 
