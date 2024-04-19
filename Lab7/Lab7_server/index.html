@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Franklin:ital,wght@0,300;1,900&display=swap');
+        img {
+            width: 200px;
+            padding: 0;
+            float: left;
+            margin: 10px;
+            align-self: center;
+        }
+        h2, h3 {
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: lighter;
+            font-size: 18px;
+        }
+        #main, #about {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: lavender;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input {
+            width: 10vw;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            background-color: cadetblue;
+            color: aliceblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Single Page Application</h2>
+    <div id="root"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        "use strict";
+        window.onhashchange = switchToStateFromURLHash;
+        let SPAState = {pagename: "Main"};
+
+        function switchToStateFromURLHash() {
+            let URLHash = window.location.hash;
+            let stateStr = URLHash.substr(1);
+
+            if (stateStr != "") {
+                let parts = stateStr.split("_");
+                SPAState = { pagename: parts[0] };
+            } else {
+                SPAState = { pagename: "Main" };
+                switchToMainPage();
+            }
+
+            console.log("New state: ");
+            console.log(SPAState);
+
+            let pageHTML = "";
+            switch (SPAState.pagename) {
+                case "Main":
+                    pageHTML += "<div id='main'><h3>Main page</h3><img src='img.jpg'><p>Lavender cafe is a cafe where you can try beautiful drinks!</p><p>Click the buttons</p></div>";
+                    break;
+                case "About":
+                    $.ajax({
+                        url: 'cafe.json',
+                        dataType: 'json',
+                        success: function (data) {
+                            pageHTML += "<div id='about'><h3>Lavender Cafe</h3><table id='drinksTable'></table><table id='snacksTable'></table></div>";
+                            document.getElementById('root').innerHTML = pageHTML;
+                            displayItems(data.menu.drinks, 'drinksTable');
+                            displayItems(data.menu.snacks, 'snacksTable');
+                        }
+                    });
+                    break;
+            }
+            document.getElementById('root').innerHTML = pageHTML;
+        }
+
+        function displayItems(items, tableId) {
+            var table = $('#' + tableId);
+            $.each(items, function (index, item) {
+                var row = '<tr><td>' + item.name + '</td><td>' + item.price + '</td><td>' + item.description + '</td></tr>';
+                table.append(row);
+            });
+        }
+
+        function switchToState(newState) {
+            let stateStr = newState.pagename;
+            location.hash = stateStr;
+        }
+
+        function switchToMainPage() {
+            switchToState({ pagename: "Main" });
+        }
+
+        function switchToAboutPage() {
+            switchToState({ pagename: "About" });
+        }
+
+        switchToStateFromURLHash();
+    </script>
+    <input type="button" value="Main" onclick="switchToMainPage()">
+    <input type="button" value="About" onclick="switchToAboutPage()">
+</body>
+</html>

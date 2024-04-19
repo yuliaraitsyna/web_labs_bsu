@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+    <style>
+        .error-message {
+            color: red;
+        }
+        h3 {
+            margin-left:20px;
+            font-family: "Roboto", sans-serif;
+        }
+        #form {
+            display: flex;
+            flex-direction: column;
+            border:solid cornflowerblue 3px ;
+            border-radius: 10px;
+            width:300px;
+            height:fit-content;
+            margin:5%;
+            padding: 5%;
+            gap:10px;
+            font-family: "Roboto", sans-serif;
+        }
+        input {
+            border:solid cornflowerblue 1px;
+            border-radius: 5px;
+            width:80%;
+            height:2%;
+        }
+        .guests-number {
+            width:20%;
+        }
+        button {
+            width:30%;
+            height:25px;
+            color: white;
+            background-color: hotpink;
+            border: none;
+            border-radius:5px;
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Бронирование столика</h3>
+    <form id="form"></form>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        #menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            border:solid hotpink;
+        }
+
+        #menu > div {
+            position: relative;
+            width:100px;
+            height: 20px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .submenu {
+            width:fit-content;
+            display: none;
+            position: absolute;
+            left:0;
+            top: 100%; /* Position the submenu below the parent menu item */
+            background-color: #fff;
+            border:solid hotpink;
+        }
+        .submenu > div {
+            width:calc(100% - 20px);
+            height:max-content;
+            padding: 10px;
+        }
+        .submenu > div:hover {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu"></div>
+    <script src="menu.js"></script>
+</body>
+</html>
