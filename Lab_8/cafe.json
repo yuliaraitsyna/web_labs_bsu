@@ -1,0 +1,44 @@
+{
+  "menu": [
+    {
+      "section_name": "drinks",
+      "positions": [
+        {
+          "name": "Espresso",
+          "price": 2.5,
+          "description": "Strong and rich coffee prepared according to the classic recipe."
+        },
+        {
+          "name": "Cappuccino",
+          "price": 3.0,
+          "description": "Coffee with milk, topped with airy foam and sprinkled with cocoa."
+        },
+        {
+          "name": "Latte",
+          "price": 3.5,
+          "description": "Gentle coffee with milk, perfect for the morning ritual."
+        }
+      ]
+    },
+    {
+      "section_name": "snacks",
+      "positions": [
+        {
+          "name": "Croissant",
+          "price": 2.0,
+          "description": "Perfect light snack made from crispy puff pastry."
+        },
+        {
+          "name": "Muffin",
+          "price": 2.5,
+          "description": "Fluffy and juicy cake with chocolate or berries."
+        },
+        {
+          "name": "Salmon Sandwich",
+          "price": 5.0,
+          "description": "Fresh slices of salmon, tomatoes, lettuce, and mayonnaise on wheat bread."
+        }
+      ]
+    }
+  ]
+}
