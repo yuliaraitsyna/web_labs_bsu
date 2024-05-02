@@ -1,9 +1,7 @@
 import { fromEvent } from 'rxjs';
-import $ from 'jquery';
-import { Observable } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { map, mergeMap} from 'rxjs';
 import "./styles/styles.css"
-
-//const jsonData = require('../data/cafe.json');
 
 const showDataButton = document.getElementById('show-data-btn');
 const deleteButton = document.getElementById('delete-btn');
@@ -68,28 +66,16 @@ function deleteLastRow() {
     }
 };
 
-const fetchData$ = new Observable(observer => {
-    $.ajax({
-        url: '/download',
-        method: 'GET',
-        dataType: 'json',
-        success: response => {
-            observer.next(response);
-            observer.complete();
+function loadData () {
+    const url = 'http://localhost:8080/download';
+
+    ajax.getJSON(url).subscribe({
+        next: data => {
+            displayData(data);
         },
-        error: error => {
-            observer.error(error);
-        }
+        error: error => console.log(error)
     });
-});
+}
 
-fetchData$.subscribe(
-    data => {
-        fromEvent(showDataButton, 'click').subscribe(() => displayData(data));
-    },
-    error => {
-        console.error('Error fetching data:', error);
-    }
-);
-
+fromEvent(showDataButton, 'click').subscribe(() => loadData());
 fromEvent(deleteButton, 'click').subscribe(() => deleteLastRow());
